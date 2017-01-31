@@ -1,0 +1,21 @@
+.choice {
+  margin: 5%;
+}
+
+.choice img {
+  max-width: 300px;
+  display: block;
+}
+
+.choice button {
+  margin: 4%;
+}
+
+
+.choice-a {
+  float: left;
+}
+
+.choice-b {
+  float: right;
+}

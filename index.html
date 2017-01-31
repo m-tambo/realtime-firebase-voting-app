@@ -11,21 +11,32 @@
 <body class="container">
   <h1 class="text-center">Place your vote</h1>
   <h2 class="text-center">VS.</h2>
+  <div class="clear"></div>
 
   <div class='choice choice-a' data-value="falcons">
-    <h2 class="text-center">Falcons</h2>
+    <h2 class="text-center">Matty Ice</h2>
     <img src="https://eventsbeat.com/wp-content/uploads/2015/12/Matt-Ryan-8.jpg" />
     <button class="text-center btn-primary" >Vote</button>
-    <h3></h3>
+    <h3 class="hidden"></h3>
   </div>
 
 
   <div class='choice choice-b' data-value="patriots">
-    <h2 class="text-center">Patriots</h2>
+    <h2 class="text-center">Tom Terrific</h2>
     <img src="http://media3.s-nbcnews.com/j/newscms/2015_20/533536/tdy-150512-tom-brady-tz_2ce90c8bae07f85ae7efefa0c4a3dded.today-inline-large.jpg" />
     <button class="text-center btn-primary">Vote</button>
-    <h3></h3>
+    <h3 class="hidden"></h3>
   </div>
+  <div class="clear"></div>
+  <div class="chat">
+    <h1>Smack Talk</h1>
+    <form>
+      <input type="text" placeholder="Name" class="name" required>
+      <input type="text" placeholder="Smack" class="msg" required>
+      <input type="submit">
+    </form>
+  </div>
+  <div class="messages"></div>
 
   <script src="/bower_components/firebase/firebase.js"></script>
   <script src="main.js"></script>

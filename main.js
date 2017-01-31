@@ -1,6 +1,5 @@
  // Initialize Firebase
-firebase.initializeApp(
-  var config = {
+firebase.initializeApp({
     apiKey: "AIzaSyBhP77MXGReodt1X7uQ7mJDyM8wLEijh6w",
     authDomain: "super-bowl-voting.firebaseapp.com",
     databaseURL: "https://super-bowl-voting.firebaseio.com",
@@ -19,8 +18,10 @@ function onVote (evt) {
   const url = 'https://super-bowl-voting.firebaseio.com/votes.json'
 
   // go GET current count
-  fetch(url)
-    .then(resp => resp.json()) // fires on the first 'bite'
+  // fetch(url)
+    // .then(resp => resp.json()) // fires on the first 'bite'
+  firebase.database().ref('votes').once('value')
+    .then(snap => snap.val())
     .then(data => {
       let newCount
       if(data) {
@@ -42,10 +43,11 @@ function onVote (evt) {
       // const newCount = data && data[voteFor] ? data[voteFor] + 1 : 1  // ternary option
 
   // PATCH new count
-      return fetch(url, {
-        method: 'PATCH',
-        body: JSON.stringify({ [voteFor]: newCount})
-      })
+      // return fetch(url, {
+      //   method: 'PATCH',
+      //   body: JSON.stringify({ [voteFor]: newCount})
+      // })
+      return firebase.database().ref('votes').update({ [voteFor]: newCount})
   // show current vote totals
     // promise inside a promise!!! guess it's ok here
       .then(() => {
